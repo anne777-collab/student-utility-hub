@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6342407589181909"
+       crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
@@ -11,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="style.css">
@@ -19,8 +21,13 @@
 <body>
   <nav class="navbar">
     <div class="container nav-content">
-      <a class="brand" href="#top">Student Utility Hub</a>
-      <a class="nav-link" href="#tools">Utilities</a>
+      <a class="brand" href="index.html">Student Utility Hub</a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html#tools">Utilities</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="privacy.html">Privacy</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
     </div>
   </nav>
 
@@ -60,8 +67,8 @@
           <h2>Everything you need for quick academic calculations</h2>
         </div>
 
-        <div class="card-grid">
-          <article class="tool-card">
+        <div class="tools-layout">
+          <article class="tool-card tool-card-featured">
             <div class="card-head">
               <h2>CGPA Calculator</h2>
               <p>Add subjects, credits, and grades to compute your CGPA.</p>
@@ -79,55 +86,142 @@
             </div>
           </article>
 
-          <article class="tool-card">
-            <div class="card-head">
-              <h2>Percentage Calculator</h2>
-              <p>Enter obtained and total marks to calculate your percentage.</p>
-            </div>
+          <div class="card-grid">
+            <article class="tool-card">
+              <div class="card-head">
+                <h2>Percentage Calculator</h2>
+                <p>Enter obtained and total marks to calculate your percentage.</p>
+              </div>
 
-            <form id="percentage-form" class="stacked-form" novalidate>
-              <label class="field">
-                <span>Obtained Marks</span>
-                <input id="obtained-marks" type="number" min="0" step="0.01" placeholder="e.g. 425">
-              </label>
+              <form id="percentage-form" class="stacked-form" novalidate>
+                <label class="field">
+                  <span>Obtained Marks</span>
+                  <input id="obtained-marks" type="number" min="0" step="0.01" placeholder="e.g. 425">
+                </label>
 
-              <label class="field">
-                <span>Total Marks</span>
-                <input id="total-marks" type="number" min="0" step="0.01" placeholder="e.g. 500">
-              </label>
+                <label class="field">
+                  <span>Total Marks</span>
+                  <input id="total-marks" type="number" min="0" step="0.01" placeholder="e.g. 500">
+                </label>
 
-              <button class="button button-primary" type="submit">Calculate Percentage</button>
-            </form>
+                <button class="button button-primary" type="submit">Calculate Percentage</button>
+              </form>
 
-            <div class="result-box" id="percentage-result" role="status" aria-live="polite">
-              Your percentage will appear here.
-            </div>
-          </article>
+              <div class="result-box" id="percentage-result" role="status" aria-live="polite">
+                Your percentage will appear here.
+              </div>
+            </article>
 
-          <article class="tool-card">
-            <div class="card-head">
-              <h2>Pass/Fail Predictor</h2>
-              <p>See whether your obtained score meets the passing mark.</p>
-            </div>
+            <article class="tool-card">
+              <div class="card-head">
+                <h2>Pass/Fail Predictor</h2>
+                <p>See whether your obtained score meets the passing mark.</p>
+              </div>
 
-            <form id="passfail-form" class="stacked-form" novalidate>
-              <label class="field">
-                <span>Obtained Marks</span>
-                <input id="student-score" type="number" min="0" step="0.01" placeholder="e.g. 33">
-              </label>
+              <form id="passfail-form" class="stacked-form" novalidate>
+                <label class="field">
+                  <span>Obtained Marks</span>
+                  <input id="student-score" type="number" min="0" step="0.01" placeholder="e.g. 33">
+                </label>
 
-              <label class="field">
-                <span>Passing Marks</span>
-                <input id="passing-score" type="number" min="0" step="0.01" placeholder="e.g. 40">
-              </label>
+                <label class="field">
+                  <span>Passing Marks</span>
+                  <input id="passing-score" type="number" min="0" step="0.01" placeholder="e.g. 40">
+                </label>
 
-              <button class="button button-primary" type="submit">Predict Result</button>
-            </form>
+                <button class="button button-primary" type="submit">Predict Result</button>
+              </form>
 
-            <div class="result-box" id="passfail-result" role="status" aria-live="polite">
-              Enter your marks to check the result.
-            </div>
-          </article>
+              <div class="result-box" id="passfail-result" role="status" aria-live="polite">
+                Enter your marks to check the result.
+              </div>
+            </article>
+
+            <article class="tool-card">
+              <div class="card-head">
+                <h2>Age Calculator</h2>
+                <p>Find the exact age in years, months, and days from a date of birth.</p>
+              </div>
+
+              <form id="age-form" class="stacked-form" novalidate>
+                <label class="field">
+                  <span>Date of Birth</span>
+                  <input id="date-of-birth" type="date">
+                </label>
+
+                <button class="button button-primary" type="submit">Calculate Age</button>
+              </form>
+
+              <div class="result-box" id="age-result" role="status" aria-live="polite">
+                Your age will appear here.
+              </div>
+            </article>
+
+            <article class="tool-card">
+              <div class="card-head">
+                <h2>EMI Calculator</h2>
+                <p>Estimate your monthly EMI using loan amount, interest rate, and tenure.</p>
+              </div>
+
+              <form id="emi-form" class="stacked-form" novalidate>
+                <label class="field">
+                  <span>Loan Amount</span>
+                  <input id="loan-amount" type="number" min="0" step="0.01" placeholder="e.g. 500000">
+                </label>
+
+                <label class="field">
+                  <span>Interest Rate (% per year)</span>
+                  <input id="interest-rate" type="number" min="0" step="0.01" placeholder="e.g. 8.5">
+                </label>
+
+                <div class="inline-fields">
+                  <label class="field">
+                    <span>Time</span>
+                    <input id="loan-time" type="number" min="0" step="1" placeholder="e.g. 5">
+                  </label>
+
+                  <label class="field">
+                    <span>Unit</span>
+                    <select id="loan-time-unit">
+                      <option value="years">Years</option>
+                      <option value="months">Months</option>
+                    </select>
+                  </label>
+                </div>
+
+                <button class="button button-primary" type="submit">Calculate EMI</button>
+              </form>
+
+              <div class="result-box" id="emi-result" role="status" aria-live="polite">
+                Your monthly EMI will appear here.
+              </div>
+            </article>
+
+            <article class="tool-card">
+              <div class="card-head">
+                <h2>Discount Calculator</h2>
+                <p>Check the final price after discount and how much money you save.</p>
+              </div>
+
+              <form id="discount-form" class="stacked-form" novalidate>
+                <label class="field">
+                  <span>Original Price</span>
+                  <input id="original-price" type="number" min="0" step="0.01" placeholder="e.g. 2499">
+                </label>
+
+                <label class="field">
+                  <span>Discount (%)</span>
+                  <input id="discount-percent" type="number" min="0" step="0.01" placeholder="e.g. 20">
+                </label>
+
+                <button class="button button-primary" type="submit">Calculate Discount</button>
+              </form>
+
+              <div class="result-box" id="discount-result" role="status" aria-live="polite">
+                Final price and savings will appear here.
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -135,6 +229,11 @@
 
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="privacy.html">Privacy Policy</a>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </div>
       <p>Made by Jiaan</p>
     </div>
   </footer>

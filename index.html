@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Student Utility Hub offers fast CGPA, percentage, and pass/fail calculations in one clean, mobile-friendly website."
+  >
+  <title>Student Utility Hub | CGPA, Percentage & Pass/Fail Calculators</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a class="brand" href="#top">Student Utility Hub</a>
+      <a class="nav-link" href="#tools">Utilities</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Built for students</p>
+          <h1>Smart academic tools, all in one calm workspace.</h1>
+          <p class="hero-text">
+            Calculate CGPA, percentage, and pass or fail status instantly with a clean interface
+            designed for quick, reliable results on any device.
+          </p>
+          <a class="button button-primary hero-button" href="#tools">Open Tools</a>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="floating-card">
+            <span>CGPA</span>
+            <strong>Weighted accuracy</strong>
+          </div>
+          <div class="floating-card">
+            <span>Marks</span>
+            <strong>Instant percentage</strong>
+          </div>
+          <div class="floating-card">
+            <span>Outcome</span>
+            <strong>Pass or fail</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section" id="tools">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Tools</p>
+          <h2>Everything you need for quick academic calculations</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="tool-card">
+            <div class="card-head">
+              <h2>CGPA Calculator</h2>
+              <p>Add subjects, credits, and grades to compute your CGPA.</p>
+            </div>
+
+            <div id="subject-list" class="subject-list" aria-live="polite"></div>
+
+            <div class="card-actions">
+              <button class="button button-secondary" id="add-subject-btn" type="button">Add Subject</button>
+              <button class="button button-primary" id="calculate-cgpa-btn" type="button">Calculate CGPA</button>
+            </div>
+
+            <div class="result-box" id="cgpa-result" role="status" aria-live="polite">
+              Add your subjects to get started.
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <div class="card-head">
+              <h2>Percentage Calculator</h2>
+              <p>Enter obtained and total marks to calculate your percentage.</p>
+            </div>
+
+            <form id="percentage-form" class="stacked-form" novalidate>
+              <label class="field">
+                <span>Obtained Marks</span>
+                <input id="obtained-marks" type="number" min="0" step="0.01" placeholder="e.g. 425">
+              </label>
+
+              <label class="field">
+                <span>Total Marks</span>
+                <input id="total-marks" type="number" min="0" step="0.01" placeholder="e.g. 500">
+              </label>
+
+              <button class="button button-primary" type="submit">Calculate Percentage</button>
+            </form>
+
+            <div class="result-box" id="percentage-result" role="status" aria-live="polite">
+              Your percentage will appear here.
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <div class="card-head">
+              <h2>Pass/Fail Predictor</h2>
+              <p>See whether your obtained score meets the passing mark.</p>
+            </div>
+
+            <form id="passfail-form" class="stacked-form" novalidate>
+              <label class="field">
+                <span>Obtained Marks</span>
+                <input id="student-score" type="number" min="0" step="0.01" placeholder="e.g. 33">
+              </label>
+
+              <label class="field">
+                <span>Passing Marks</span>
+                <input id="passing-score" type="number" min="0" step="0.01" placeholder="e.g. 40">
+              </label>
+
+              <button class="button button-primary" type="submit">Predict Result</button>
+            </form>
+
+            <div class="result-box" id="passfail-result" role="status" aria-live="polite">
+              Enter your marks to check the result.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Made by Jiaan</p>
+    </div>
+  </footer>
+
+  <template id="subject-row-template">
+    <div class="subject-row">
+      <label class="field">
+        <span>Subject</span>
+        <input class="subject-name" type="text" maxlength="50" placeholder="e.g. Mathematics">
+      </label>
+
+      <label class="field">
+        <span>Credits</span>
+        <input class="subject-credit" type="number" min="0" step="0.5" placeholder="e.g. 4">
+      </label>
+
+      <label class="field">
+        <span>Grade</span>
+        <select class="subject-grade">
+          <option value="">Select</option>
+          <option value="O">O</option>
+          <option value="A+">A+</option>
+          <option value="A">A</option>
+          <option value="B+">B+</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="F">F</option>
+        </select>
+      </label>
+
+      <button class="icon-button remove-subject-btn" type="button" aria-label="Remove subject">
+        Remove
+      </button>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
